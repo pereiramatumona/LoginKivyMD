@@ -1,0 +1,46 @@
+MDFloatLayout:
+    orientation: "vertical"
+
+    Image:
+        source: "image/user_icon.png"
+        size_hint: None, None
+        size: "200dp", "200dp"
+        pos_hint: {"center_x": .5, "center_y": .70}
+
+    MDLabel:
+        text: "Faca o login"
+        pos_hint: {"center_x": .5, "center_y": .55}
+        size_hint_x: .8
+        halign: "center"
+        bold:True
+        text_style: "H1"
+        color: 0.22, 0.56, 0.84,1
+
+    MDTextField:
+        hint_text: "Email"
+        icon_right:"email"
+        icon_right_color:app.theme_cls.primary_color
+        pos_hint: {"center_x": .5, "center_y": .50}
+        size_hint_x: .8
+
+    MDTextField:
+        hint_text: "Password"
+        icon_right:"lock"
+        icon_right_color:app.theme_cls.primary_color
+        pos_hint: {"center_x": .5, "center_y": .45}
+        size_hint_x: .8
+        password: True
+
+    MDTextButton:
+        text: "Esqueci minha senha"
+        pos_hint: {"center_x": .7, "center_y": .40}
+        size_hint_x: .4
+        halign: "right"
+        text_color: 0.81, 0.81, 0.81, 1
+        on_release:app.recuperar_senha()
+
+    MDFillRoundFlatButton:
+        text: "Login"
+        pos_hint: {"center_x": .5, "center_y": .33}
+        size_hint_x: .8
+        on_release: app.fazer_login()
